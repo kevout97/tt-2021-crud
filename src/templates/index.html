@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4">
+      {% with messages = get_flashed_messages()  %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="card card-body">
+        <form action="{{url_for('add_user')}}" method="POST" id="insert-form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="lastname" placeholder="Apellido">
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control input-append" name="birthday" placeholder="Fecha de Nacimiento">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="cellphone" placeholder="Telefono">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Correo electronico">
+          </div>
+          <button class="btn btn-primary btn-block">
+            Guardar 
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+        <div class="container">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h2>Usuarios</b></h2>
+                </div>
+                    </div>
+                </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <td style="display:none;">ID</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Fecha de nacimiento</td>
+            <td>Telefono</td>
+            <td>Email</td>
+            <td>Acciones</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td style="display:none;">{{user.0}}</td>
+            <td>{{user.1}}</td>
+            <td>{{user.2}}</td>
+            <td>{{user.3}}</td>
+            <td>{{user.4}}</td>
+            <td>{{user.5}}</td>
+            <td>
+              <a href="/edit/{{user.0}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+              <a href="/delete/{{user.0}}" class="delete" ><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
