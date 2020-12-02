@@ -1,0 +1,6 @@
+virtualenv
+wheel
+flask
+flask-mysqldb
+uwsgi
+sqlalchemy
