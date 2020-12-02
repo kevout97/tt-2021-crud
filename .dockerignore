@@ -1,6 +1,6 @@
-# Crud runit
-crud.runit.sh
-# Mysql runit
+*.md
+*.sql
+.gitignore
 mysql.runit.sh
 # Byte-compiled / optimized / DLL files
 __pycache__/
