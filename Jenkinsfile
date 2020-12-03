@@ -68,7 +68,9 @@ pipeline{
                 }
 
                 stage("Scanning source code"){
-                    echo "Scanning source code"
+                    steps{
+                        echo "Scanning source code"
+                    }
                 }
             }
         }
