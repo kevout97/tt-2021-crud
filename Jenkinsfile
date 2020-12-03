@@ -54,7 +54,7 @@ pipeline{
             steps{
                 script {
                     def customImage = docker.build("${JOB_NAME}:v${env.BUILD_ID}")
-                    customImage.push()
+                    // customImage.push()
                 }
             }
         }
