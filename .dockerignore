@@ -1,3 +1,5 @@
+# Jenkins
+Jenkinsfile
 *.md
 *.sql
 .gitignore
