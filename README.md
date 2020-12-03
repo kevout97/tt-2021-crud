@@ -6,6 +6,7 @@ El objetivo de este sistema es ejemplificar la construccion de uno de los compon
 
 El repositorio se encuentra conformado por la siguiente estructura de archivos y directorios.
 
+```
 ├── docker-entrypoint.sh
 ├── Dockerfile
 ├── README.md
@@ -38,6 +39,7 @@ El repositorio se encuentra conformado por la siguiente estructura de archivos y
     │   ├── index.html
     │   └── layout.html
     └── User.py 
+```
 
 Importante señalar que el directorio **src** contiene todo el código separando los archivos correspondientes al front en dos subdirectorios **static** y **templates** los archivos backend corresponden a los archivos con terminacion **.py** donde **main.py** hace referencia al archivo principal.
 
